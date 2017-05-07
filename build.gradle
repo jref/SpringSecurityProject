@@ -1,0 +1,83 @@
+group 'com.uacodespace'
+version '1.0'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    /* -------------------------------------- Core --------------------------------------- */
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework:spring-context-support:$springVersion"
+    compile "org.springframework:spring-tx:$springVersion"
+    compile "org.springframework:spring-aspects:$springVersion"
+
+    compile "javax.validation:validation-api:$javaxValidationVersion"
+    compile "org.hibernate:hibernate-validator:$hibernateVersion"
+    /*-------------------------------------------------------------------------------------*/
+
+    /* -------------------------------------- Web ---------------------------------------- */
+    compile "org.springframework:spring-webmvc:$springVersion"
+    compile "javax.servlet:jstl:$jstlVersion"
+    providedCompile "javax.servlet:javax.servlet-api:$servletApiVersion"
+    compile "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion"
+    compile "net.java.dev.jets3t:jets3t:$amazonS3ApiVersion"
+    /*-------------------------------------------------------------------------------------*/
+
+    /* -------------------------------------- Data --------------------------------------- */
+    compile "org.springframework:spring-orm:$springVersion"
+    compile "org.springframework.data:spring-data-jpa:$springDataJpaVersion"
+    compile "org.springframework.data:spring-data-rest-webmvc:$springDataRest"
+    compile "org.springframework.data:spring-data-rest-hal-browser:$springDataRest"
+
+    compile "mysql:mysql-connector-java:$mysqlConnectorVesrion"
+
+    compile "org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$jpaVersion"
+    compile "org.hibernate:hibernate-core:$hibernateVersion"
+
+    compile "com.zaxxer:HikariCP:$hikariCPVersion"
+    compile "org.hibernate:hibernate-hikaricp:$hibernateVersion"
+
+    compile "org.springframework.data:spring-data-mongodb:$springDataMongodb"
+    compile "org.mongodb:mongodb-driver:$mongodbVersion"
+    compile "org.mongodb:mongo-java-driver:$mongodbVersion"
+
+//    compile "org.ehcache:ehcache:$ehcacheVersion"
+
+    compile group: 'com.h2database', name: 'h2', version: '1.4.193'
+    /*-------------------------------------------------------------------------------------*/
+
+    /* ----------------------------------- Integration ----------------------------------- */
+    compile "org.springframework:spring-jms:$springVersion"
+    compile 'org.springframework.amqp:spring-rabbit:1.6.6.RELEASE'
+    compile "org.apache.activemq:activemq-broker:$activemqVersion"
+    compile "org.springframework:spring-websocket:$springVersion"
+    /*-------------------------------------------------------------------------------------*/
+
+    /* ------------------------------------- Security ------------------------------------ */
+    compile "org.springframework.security:spring-security-core:$springSecurityVersion"
+    compile "org.springframework.security:spring-security-web:$springSecurityVersion"
+    compile "org.springframework.security:spring-security-config:$springSecurityVersion"
+
+    /*-------------------------------------------------------------------------------------*/
+
+    /* -------------------------------------- Test --------------------------------------- */
+    compile "org.springframework:spring-test:$springVersion"
+    compile "org.mockito:mockito-core:$mockitoVersion"
+
+    testCompile "junit:junit:$junitVersion"
+    /*-------------------------------------------------------------------------------------*/
+
+    /*Logging*/
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.21'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.21'
+
+
+}
