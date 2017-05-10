@@ -24,7 +24,7 @@ public class BambooWebInitializer extends AbstractAnnotationConfigDispatcherServ
 
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
-        registration.setMultipartConfig(new MultipartConfigElement("C:\\docs", 2097152, 4194304, 0));
+        registration.setMultipartConfig(new MultipartConfigElement("c:\\myFiles\\", 2097152, 4194304, 0));
     }
 
 }

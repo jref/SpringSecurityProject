@@ -51,7 +51,7 @@ dependencies {
 
 //    compile "org.ehcache:ehcache:$ehcacheVersion"
 
-    compile group: 'com.h2database', name: 'h2', version: '1.4.193'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.195'
     /*-------------------------------------------------------------------------------------*/
 
     /* ----------------------------------- Integration ----------------------------------- */
